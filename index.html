@@ -1,0 +1,101 @@
+<?php
+// Start the output buffer
+ob_start();
+?>
+
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Welcome!</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body, html {
+      height: 100%;
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(180deg, #ffcccb 0%, #ffebd1 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+    }
+    .welcome-text {
+      font-weight: 900;
+      font-size: 4rem;
+      color: #5c3a3a;
+      letter-spacing: -0.05em;
+      user-select: none;
+      margin-bottom: 2rem;
+    }
+    .start-button {
+      background: #ffe4e1;
+      color: #5c3a3a;
+      font-weight: 900;
+      font-size: 1.5rem;
+      border-radius: 9999px;
+      padding: 0.5rem 3rem;
+      border: none;
+      cursor: pointer;
+      box-shadow:
+        0 10px 15px -3px rgba(255, 105, 180, 0.4),
+        0 4px 6px -4px rgba(255, 105, 180, 0.4);
+      display: inline-flex;
+      align-items: center;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+      user-select: none;
+      position: relative;
+    }
+    .start-button:hover {
+      background: #ffcccb;
+      transform: translateY(-2px);
+      box-shadow:
+        0 15px 25px -3px rgba(255, 105, 180, 0.5),
+        0 7px 8px -4px rgba(255, 105, 180, 0.5);
+    }
+    .additional-button {
+      margin-top: 1rem;
+      background: #ff6f61;
+      color: white;
+      font-weight: 700;
+      font-size: 1.2rem;
+      border-radius: 9999px;
+      padding: 0.5rem 2rem;
+      border: none;
+      cursor: pointer;
+      box-shadow:
+        0 5px 10px -3px rgba(255, 105, 180, 0.4),
+        0 2px 4px -4px rgba(255, 105, 180, 0.4);
+      transition: background-color 0.3s ease, transform 0.2s ease;
+    }
+    .additional-button:hover {
+      background: #ff4c4c;
+      transform: translateY(-2px);
+    }
+  </style>
+</head>
+<body>
+  <div class="welcome-text" aria-label="Welcome text">
+    Welcome!
+  </div>
+
+  <button class="start-button" id="startBtn" aria-label="Start button">
+    Start
+  </button>
+
+  <script>
+    document.getElementById('startBtn').addEventListener('click', () => {
+      // Navigate to the next page - for demo purpose, we'll redirect to a second.html page
+      window.location.href = 'page.html'; // Update the destination as needed
+    });
+
+    document.getElementById('additionalBtn').addEventListener('click', () => {
+      // Action for the additional button
+      alert('More information coming soon!'); // Replace with desired action
+    });
+  </script>
+
+<?php
+// Flush the output buffer
+ob_end_flush();
+?>
